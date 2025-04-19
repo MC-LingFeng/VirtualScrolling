@@ -13,7 +13,7 @@ const HomePage: React.FC = () => {
 
   const viewableHeight = 300; // 可视区域高度
   const itemHeight = 30; // 单个项目高度
-  const dataHeight = dataList.length * 10; // 数据总高度
+  const dataHeight = dataList.length * itemHeight; // 数据总高度
   const itemCount = Math.ceil(viewableHeight / itemHeight); // 可视区域内的项目数量
   const startIndex = Math.floor(scrollTop / itemHeight); // 起始索引
   const endIndex = startIndex + itemCount; // 结束索引
@@ -38,7 +38,7 @@ const HomePage: React.FC = () => {
   return (
     <div>
       <h1>虚拟滚动</h1>
-
+      <span>存在问题： 1. 高度固定 2. 白屏闪烁</span>
       <div className={styles.container} style={{ height: viewableHeight }}>
         <div className={styles.dataHeight} style={{ height: dataHeight }}></div>
         <div className={styles.viewable} style={{ height: viewableHeight }}>

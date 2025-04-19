@@ -15,19 +15,14 @@ export default defineConfig({
       redirect: '/home',
     },
     {
-      name: '首页',
+      name: '虚拟滚动（定高）',
       path: '/home',
       component: './Home',
     },
     {
-      name: '权限演示',
-      path: '/access',
+      name: '虚拟滚动优化',
+      path: '/optimization',
       component: './Access',
-    },
-    {
-      name: ' CRUD 示例',
-      path: '/table',
-      component: './Table',
     },
   ],
   npmClient: 'yarn',
