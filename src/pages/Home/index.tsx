@@ -11,14 +11,14 @@ const dataList = new Array(1000).fill(0).map((_, index) => {
 const HomePage: React.FC = () => {
   const [scrollTop, setScrollTop] = useState(0);
 
-  const viewableHeight = 300; // 300px
-  const itemHeight = 30;
-  const dataHeight = dataList.length * 10; // 10px per item
-  const itemCount = Math.ceil(viewableHeight / itemHeight); // 300px viewable height
-  const startIndex = Math.floor(scrollTop / itemHeight); // 0
-  const endIndex = startIndex + itemCount;
-  const visibleData = dataList.slice(startIndex, endIndex); // 0-30
-  const offset = scrollTop - (scrollTop % itemHeight); // 0
+  const viewableHeight = 300; // 可视区域高度
+  const itemHeight = 30; // 单个项目高度
+  const dataHeight = dataList.length * 10; // 数据总高度
+  const itemCount = Math.ceil(viewableHeight / itemHeight); // 可视区域内的项目数量
+  const startIndex = Math.floor(scrollTop / itemHeight); // 起始索引
+  const endIndex = startIndex + itemCount; // 结束索引
+  const visibleData = dataList.slice(startIndex, endIndex); // 可视数据
+  const offset = scrollTop - (scrollTop % itemHeight); // 偏移量
 
   useEffect(() => {
     const container = document.querySelector(`.${styles.container}`);
